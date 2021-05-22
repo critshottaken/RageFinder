@@ -1,0 +1,183 @@
+
+--Made by : https://v3rmillion.net/member.php?action=profile&uid=1078854
+
+local UILibrary = loadstring(game:HttpGet("https://pastebin.com/raw/V1ca2q9s"))()
+
+local MainUI = UILibrary.Load("Rage Finder")
+local FirstPage = MainUI.AddPage("Tools")
+
+local FirstLabel = FirstPage.AddLabel("Tools for Client Use!")
+local FirstButton = FirstPage.AddButton("IY", function()
+    local function callback(Text)
+            if Text == "Yes" then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xaxaxaxaxaxaxaxaxa/Bypasses/main/Da-Hood", true))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+            elseif Text == ("Custom") then
+            print ("No")
+            end
+        end
+    
+    
+        local NotificationBindable = Instance.new("BindableFunction")
+        NotificationBindable.OnInvoke = callback
+        --
+        game.StarterGui:SetCore("SendNotification",  {
+            Title = "Script is Deadly";
+            Text = "RageFinder Will Load ACBypass , sure you still wanna do this though?";
+            Icon = "";
+            Duration = 80;
+            Button1 = "Yes";
+            Button2 = "No";
+            Callback = NotificationBindable;
+        })
+    end)
+
+local FirstButton = FirstPage.AddButton("Edge's Audio Logger", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/GmbrsEjM'),true))()
+end)
+local FirstButton = FirstPage.AddButton("Swear At Kids", function()
+    local function callback(Text)
+		if Text == "Chet" then
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/bedra45/chetbypasser/main/chetbypass'))()
+		elseif Text == ("Custom Type") then
+			loadstring(game:HttpGet("https://the-shed.xyz/roblox/scripts/ChatBypass", true))()
+		end
+	end
+
+
+	local NotificationBindable = Instance.new("BindableFunction")
+	NotificationBindable.OnInvoke = callback
+	--
+	game.StarterGui:SetCore("SendNotification",  {
+		Title = "Witch version would you like?";
+		Text = "Please Choose";
+		Icon = "";
+		Duration = 10;
+		Button1 = "Chet";
+		Button2 = "Custom Type";
+		Callback = NotificationBindable;
+	})
+end)
+
+local SecondPage = MainUI.AddPage("GET THAT BAG!")
+
+local SecondLabel = SecondPage.AddLabel("Autorobber's")
+
+
+local SecondButton = SecondPage.AddButton("AutoRobberin 1", function()
+loadstring(game:HttpGet("https://paste.ee/r/fd6Cb/0", true))()
+end)
+
+local SecondButton = SecondPage.AddButton("AutoRobbin 2", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/74VJ07iY", true))()
+end)
+
+local SecondButton = SecondPage.AddButton("GraveRobber", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/z17wDE8W", true))()
+end)
+
+local SecondButton = SecondPage.AddButton("Robber 4 (once and done)", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/rapnz/scripts/master/DaHoodFarm.lua"))()
+
+end)
+
+local ThirdPage = MainUI.AddPage("Safe Scripts")
+
+local ThirdButton = ThirdPage.AddButton("Polakya", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/pixelheadx/Polakya/main/Bestscript.md"))();
+
+end)
+
+
+local ThirdButton = ThirdPage.AddButton("Valiant", function()
+loadstring(game:HttpGet("https://paste.ee/r/9kHAz/0", true))()
+
+end)
+
+
+local ThirdButton = ThirdPage.AddButton("Zordion", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/wKg0DVLC", true))()
+
+end)
+
+local ThirdButton = ThirdPage.AddButton("Raycode X (good for unban)", function()
+loadstring(game:GetObjects("rbxassetid://5812737894")[1].Source)()
+end)
+
+local ThirdButton = ThirdPage.AddButton("Trust Boy", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/XXAWmifh'))()
+
+end)
+
+local ThirdButton = ThirdPage.AddButton("Legacy X (better then you think)", function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/Compwnter/LegacyX/main/script.lua'), true))()
+
+end)
+
+
+
+local ThirdButton = ThirdPage.AddButton("Rayzor X (Godmode)", function()
+	loadstring(game:HttpGet("https://paste.ee/r/0R3sZ/0", true))()
+end)
+
+local ThirdButton = ThirdPage.AddButton("Cora Hub", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/3zMt8VPZ", true))()
+
+end)
+
+
+local ThirdButton = ThirdPage.AddButton("Lora X V1 (dunno about this one chief)", function()
+-- Lora X
+loadstring(game:HttpGet("https://pastebin.com/raw/jHBEa3Mv", true))()
+end)
+
+
+local ThirdButton = ThirdPage.AddButton("HoodSharker", function()
+	loadstring(game:HttpGet("https://paste.ee/r/2Buxn/0", true))()
+end)
+
+
+local FourthPage  =MainUI.AddPage("Key's")
+
+local FourthLabel = FourthPage.AddLabel("Get Key's")
+
+local FourthButton = FourthPage.AddButton("Copy Polakya Key", function()
+setclipboard ("QEWWEWE23EWDFSAFQEEDGFBCVHSDAKDADOPOIAUXDJMCMCALL1LELLALAL")
+game.StarterGui:SetCore("SendNotification",  {
+    Title = "Polakya Key Copied";
+    Text = "Have Fun!";
+    Icon = "";
+    Duration = 10;
+    Button1 = "Thanks!";
+    Button2 = "Fuck you!";
+    Callback = NotificationBindable;
+})
+end)
+
+
+local FourthButton = FourthPage.AddButton("Copy Legacy X Key", function()
+setclipboard ("f6c2860809b522efe73844f75475fc414c8e0c7e020a698e21c4d8b732d85214")
+game.StarterGui:SetCore("SendNotification",  {
+    Title = "Legacy Key Copied";
+    Text = "Have Fun!";
+    Icon = "";
+    Duration = 10;
+    Button1 = "Gotcha!";
+    Button2 = "Die Skid!";
+    Callback = NotificationBindable;
+})
+end)
+
+local FourthButton = FourthPage.AddButton("Copy Zordion Key", function()
+setclipboard ("zordioniscool")
+game.StarterGui:SetCore("SendNotification",  {
+    Title = "Zordion Key Copied?";
+    Text = "Have Fun!";
+    Icon = "";
+    Duration = 10;
+    Button1 = "Okay!";
+    Button2 = "Die!";
+    Callback = NotificationBindable;
+})
+
+end)
