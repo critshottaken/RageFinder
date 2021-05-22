@@ -1,0 +1,241 @@
+if game.PlaceId == 4832438542 then 
+
+
+
+
+
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("RagFinder - VR Hands Edition", "Midnight")
+local Tab = Window:NewTab("Local Player")
+local Section = Tab:NewSection("Local")
+
+Section:NewSlider("WalkSpeed", "How much you want you're Speed Power to be.", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+
+Section:NewSlider("Jumpower", "How much you want you're Jump Power to be.", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+
+
+
+Section:NewButton("Fly (X)", "Press X To Fly and annoy Vr People with", function()
+local plr = game.Players.LocalPlayer
+local mouse = plr:GetMouse()
+ 
+        localplayer = plr
+       
+        if workspace:FindFirstChild("Core") then
+            workspace.Core:Destroy()
+        end
+       
+        local Core = Instance.new("Part")
+        Core.Name = "Core"
+        Core.Size = Vector3.new(0.05, 0.05, 0.05)
+ 
+        spawn(function()
+            Core.Parent = workspace
+            local Weld = Instance.new("Weld", Core)
+            Weld.Part0 = Core
+            Weld.Part1 = localplayer.Character.LowerTorso
+            Weld.C0 = CFrame.new(0, 0, 0)
+        end)
+       
+        workspace:WaitForChild("Core")
+       
+        local torso = workspace.Core
+        flying = true
+        local speed=10
+        local keys={a=false,d=false,w=false,s=false}
+        local e1
+        local e2
+        local function start()
+            local pos = Instance.new("BodyPosition",torso)
+            local gyro = Instance.new("BodyGyro",torso)
+            pos.Name="EPIXPOS"
+            pos.maxForce = Vector3.new(math.huge, math.huge, math.huge)
+            pos.position = torso.Position
+            gyro.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+            gyro.cframe = torso.CFrame
+            repeat
+                wait()
+                localplayer.Character.Humanoid.PlatformStand=true
+                local new=gyro.cframe - gyro.cframe.p + pos.position
+                if not keys.w and not keys.s and not keys.a and not keys.d then
+                    speed=5
+                end
+                if keys.w then
+                    new = new + workspace.CurrentCamera.CoordinateFrame.lookVector * speed
+                    speed=speed+0
+                end
+                if keys.s then
+                    new = new - workspace.CurrentCamera.CoordinateFrame.lookVector * speed
+                    speed=speed+0
+                end
+                if keys.d then
+                    new = new * CFrame.new(speed,0,0)
+                    speed=speed+0
+                end
+                if keys.a then
+                    new = new * CFrame.new(-speed,0,0)
+                    speed=speed+0
+                end
+                if speed>10 then
+                    speed=5
+                end
+                pos.position=new.p
+                if keys.w then
+                    gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(-math.rad(speed*0),0,0)
+                elseif keys.s then
+                    gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(math.rad(speed*0),0,0)
+                else
+                    gyro.cframe = workspace.CurrentCamera.CoordinateFrame
+                end
+            until flying == false
+            if gyro then gyro:Destroy() end
+            if pos then pos:Destroy() end
+            flying=false
+            localplayer.Character.Humanoid.PlatformStand=false
+            speed=10
+        end
+        e1=mouse.KeyDown:connect(function(key)
+            if not torso or not torso.Parent then flying=false e1:disconnect() e2:disconnect() return end
+            if key=="w" then
+                keys.w=true
+            elseif key=="s" then
+                keys.s=true
+            elseif key=="a" then
+                keys.a=true
+            elseif key=="d" then
+                keys.d=true
+            elseif key=="x" then
+                if flying==true then
+                    flying=false
+                else
+                    flying=true
+                    start()
+                end
+            end
+        end)
+        e2=mouse.KeyUp:connect(function(key)
+            if key=="w" then
+                keys.w=false
+            elseif key=="s" then
+                keys.s=false
+            elseif key=="a" then
+                keys.a=false
+            elseif key=="d" then
+                keys.d=false
+            end
+        end)
+        start()
+end)
+
+
+Section:NewButton("Infinite Jump", "Jump as mutch as you like!", function()
+ game:GetService("UserInputService").JumpRequest:connect(function()
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")      
+ end)
+end)
+
+
+
+Section:NewButton("Alt Delete", "Hold Alt and click where you want to delete.", function()
+	   	loadstring(game:HttpGet("https://pastebin.com/raw/DThr62Cn", true))()	
+end)
+
+
+
+
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Annoy VR Players")
+
+
+Section:NewTextBox("Annoy VR PLayers", "Gets near there face.", function(txt)
+local plr = (txt)
+
+
+
+-- Ignore -- Ignore -- Ignore -- Ignore -- Ignore --
+
+local part = Instance.new("Part", game.Workspace)
+part.Size = Vector3.new(1,1,1)
+part.CanCollide = false
+local w = Instance.new("Weld", part)
+w.Part0 = part
+w.Part1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+local plrId = game.Players[plr].UserId
+local head = game.Workspace[plrId .. "Head"].REAL
+local bp = Instance.new("BodyPosition", part)
+
+bp.D = 10000
+bp.P = 1000000
+while wait() do
+	bp.Position = head.Position + head.CFrame.LookVector * 30 + head.CFrame.RightVector * 2
+end
+end)
+
+
+Section:NewButton("AntiGrabber Toggle (R)", "Makes it harder to get grabbed!", function()
+    	    loadstring(game:HttpGet("https://pastebin.com/raw/2pwTjwS4", true))()
+
+end)
+
+
+
+
+local Section = Tab:NewSection("Chat Bypass")
+Section:NewButton("ChetBypasser", "A Gui with alot of bypassed words!", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/bedra45/chetbypasser/main/chetbypass'))()
+end)
+
+Section:NewButton("Custom Chat Bypass", "Say Bypassed words!", function()
+loadstring(game:HttpGet("https://the-shed.xyz/roblox/scripts/ChatBypass", true))()
+end)
+
+
+local Tab = Window:NewTab("Misc")
+local Section = Tab:NewSection("Extra Features")
+Section:NewButton("Infinite Yield", ";Usefull command :copyname (User)", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Section:NewButton("Server Hop", ";Goes into another server", function()
+
+	wait(0.3)
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "RageFinder";
+		Text = "Looking For New Server ";
+	})
+
+	local x = {}
+	for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+		if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+			x[#x + 1] = v.id
+		end
+	end
+	if #x > 0 then
+		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+	else
+		return game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "RageFinder";
+			Text = "Server Hop failed cri ";
+		})
+	end
+
+
+
+end)
+
+
+end
+
+
+
