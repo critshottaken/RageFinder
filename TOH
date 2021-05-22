@@ -1,0 +1,308 @@
+if game.PlaceId == 1962086868 then 
+	loadstring(game:HttpGet('https://pastebin.com/raw/ibY1tAxA', true))()
+ 
+wait(0.3)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "RageFinder";
+	Text = "AntiCheat Fucked, Loading RageFinder now";
+})
+ 
+wait (1)
+
+
+
+
+
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local X = Material.Load({
+	Title = "RageFinderTOH",
+	Style = 3,
+	SizeX = 400,
+	SizeY = 400,
+	Theme = "Light",
+	ColorOverrides = {
+		MainFrame = Color3.fromRGB(235,235,235)
+	}
+})
+
+local Y = X.New({
+	Title = "Local Player"
+})
+
+
+
+
+
+
+local A = Y.Button({
+	Text = "Infinite jump",
+	Callback = function()
+	 game:GetService("UserInputService").JumpRequest:connect(function()
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")      
+    end)
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Jump as much as you would like!"
+			})
+		end
+	}
+})
+
+local A = Y.Button({
+	Text = "Fly (E)",
+	Callback = function()
+	   loadstring(game:HttpGet("https://pastebin.com/raw/7rXZ9VNc", true))()
+	   end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Toggle fly (E)"
+			})
+		end
+	}
+})
+
+
+
+local A = Y.Button({
+	Text = "Noclip (R)",
+	Callback = function()
+	    loadstring(game:HttpGet("https://pastebin.com/raw/2pwTjwS4", true))()
+	   end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Press R To toggle Noclip on and off."
+			})
+		end
+	}
+})
+
+local A = Y.Button({
+	Text = "Alt Delete",
+	Callback = function()
+	   	loadstring(game:HttpGet("https://pastebin.com/raw/DThr62Cn", true))()	
+	   end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Hold alt and click where you want to delete."
+			})
+		end
+	}
+})
+
+
+local A = Y.Button({
+	Text = "Ctrl Teleport",
+	Callback = function()
+	   loadstring(game:HttpGet("https://pastebin.com/raw/gp9y2Wht", true))()
+	   end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Hold Ctrl and click where you want to teleport."
+			})
+		end
+	}
+})
+
+
+local A = Y.Slider({
+	Text = "Walkspeed",
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+	end,
+	Min = 16,
+	Max = 400,
+	Def = 300
+})
+ 
+local A = Y.Slider({
+	Text = "JumpPower",
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+	end,
+	Min = 20,
+	Max = 400,
+	Def = 300
+})
+
+
+
+local Z = X.New({
+	Title = "Main"
+})
+
+
+
+local A = Z.Button({
+	Text = "Teleport method 1",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.tower.sections.finish.exit.ParticleBrick.CFrame
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Teleports you to the top ."
+			})
+		end
+	}
+})
+ 
+ 
+ 
+local A = Z.Button({
+	Text = "Teleport mehtod 2",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/wx9xz1FC", true))()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "safer Teleport to the top."
+			})
+		end
+	}
+})
+ 
+local A = Z.Button({
+	Text = "God mode",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/MSZAznxp", true))()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Wont Die to kill parts."
+			})
+		end
+	}
+})
+ 
+ 
+local A = Z.Button({
+	Text = "Remove kill parts",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/DHC61sz3", true))()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Removes kill parts."
+			})
+		end
+	}
+})
+ 
+local A = Z.Button({
+	Text = "Give tools",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/ngVWmQ8m", true))()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Gives you all the tools."
+			})
+		end
+	}
+})
+
+
+
+
+
+local Z = X.New({
+	Title = "Universal"
+})
+
+
+local A = Z.Button({
+	Text = "Infinite Yield",
+	Callback = function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Loads IY Admin."
+			})
+		end
+	}
+})
+
+local A = Z.Button({
+	Text = "Chet Bypasser",
+	Callback = function()
+	print ("yes")
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/bedra45/chetbypasser/main/chetbypass'))()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Runs ChetBypasser script."
+			})
+		end
+	}
+})
+
+
+local A = Z.Button({
+	Text = "Unnamed esp",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/uVH1Z6Pa", true))()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Runs Unnamedesp script."
+			})
+		end
+	}
+})
+
+
+
+
+
+local A = Z.Button({
+	Text = "Walk on walls",
+	Callback = function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/kSabtWXN", true))()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Lets you walk on any wall,."
+			})
+		end
+	}
+})
+
+
+
+
+
+
+
+local A = Z.Button({
+	Text = "Less Lag",
+	Callback = function()
+			loadstring(game:HttpGet("https://pastebin.com/raw/gX9mR85X", true))()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Removes some textures for better fps."
+			})
+		end
+	}
+})
+
+
+end 
